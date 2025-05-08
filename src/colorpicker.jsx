@@ -1,9 +1,5 @@
 import React, { useState } from 'react'
-
-function colorSelector(){
-
-}
-
+import { ChromePicker } from 'react-color'
 
 
 function ColorPicker() {
@@ -36,7 +32,15 @@ function ColorPicker() {
         <p>Selected Color: {color}</p>
         
         </div>
-            
+
+
+        {showPicker && (
+          <div className = "close-picker" onclick = {handleClickOutside}>
+            <ChromePicker
+              color = {color}
+              onChange={handleColorChange}/>
+          </div> 
+        )}    
       </div>  
                         
       
